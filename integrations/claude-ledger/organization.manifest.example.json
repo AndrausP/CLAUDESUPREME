@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "organization_id": "orchestra-core-default",
+  "protocol_version": "1.0.0",
+  "package_version": "0.1.0",
+  "generated_at": "2026-11-11T00:00:00Z",
+  "departments": [],
+  "agents": [],
+  "skills": [],
+  "mcp_servers": [],
+  "profiles": ["ECONOMY", "BALANCED", "QUALITY", "CRITICAL"],
+  "policies": [{"id": "least-privilege", "version": "1.0.0"}],
+  "dependencies": [],
+  "integrations": {"claude_code": "available", "claude_ledger": "optional"},
+  "checksums": {}
+}

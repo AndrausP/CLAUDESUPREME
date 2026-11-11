@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "name": "orchestra-dark",
+  "mode": "dark",
+  "colors": {
+    "background": "#0C0C0C",
+    "surface": "#161616",
+    "surface_elevated": "#202020",
+    "text_primary": "#F2F2F2",
+    "text_secondary": "#A7A7A7",
+    "border": "#6B6B6B",
+    "accent": "#BAF3DB",
+    "success": "#BAF3DB",
+    "error": "#C9372C",
+    "warning": "#F5C35B",
+    "info": "#8AB4F8",
+    "selection_background": "#263A34"
+  },
+  "states": {
+    "pending": { "token": "[ ]", "label": "Pendente", "color": "text_secondary" },
+    "running": { "token": "[>]", "label": "Em execução", "color": "accent" },
+    "completed": { "token": "[OK]", "label": "Concluído", "color": "success" },
+    "blocked": { "token": "[!]", "label": "Bloqueado", "color": "warning" },
+    "failed": { "token": "[X]", "label": "Falha", "color": "error" },
+    "cancelled": { "token": "[-]", "label": "Cancelado", "color": "text_secondary" },
+    "unknown": { "token": "[?]", "label": "Desconhecido", "color": "text_secondary" }
+  },
+  "layout": {
+    "navigation_width": 22,
+    "context_width": 32,
+    "wide_min_columns": 120,
+    "interactive_min_columns": 80,
+    "interactive_min_rows": 24,
+    "density": "compact"
+  },
+  "capabilities": {
+    "ascii_baseline": true,
+    "color_optional": true,
+    "unicode_optional": true,
+    "motion_required": false
+  }
+}
+

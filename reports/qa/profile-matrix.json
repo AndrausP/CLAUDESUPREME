@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-11-11T17:08:18.572164Z",
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "scenario_a_without_organization": {
+    "status": "not_executed",
+    "reason": "no equivalent non-Orchestra harness in this repository"
+  },
+  "profiles": {
+    "ECONOMY": {
+      "iterations": 25,
+      "duration_ms_median": 0.0037999998312443495,
+      "duration_ms_min": 0.0035999983083456755,
+      "duration_ms_max": 0.024900014977902174,
+      "selected_agents": [
+        "feature-engineer"
+      ],
+      "limits": {
+        "max_agent_runs": 1,
+        "max_parallel_agents": 1,
+        "max_retries_per_step": 1,
+        "max_rework_cycles": 1,
+        "max_duration_seconds": 900,
+        "max_artifact_bytes": 2000000,
+        "max_tokens": null
+      },
+      "tokens": {
+        "value": null,
+        "provenance": "unknown"
+      },
+      "cost": {
+        "value": null,
+        "provenance": "unknown"
+      }
+    },
+    "BALANCED": {
+      "iterations": 25,
+      "duration_ms_median": 0.0036999990697950125,
+      "duration_ms_min": 0.0034999975468963385,
+      "duration_ms_max": 0.004599976819008589,
+      "selected_agents": [
+        "feature-engineer"
+      ],
+      "limits": {
+        "max_agent_runs": 3,
+        "max_parallel_agents": 2,
+        "max_retries_per_step": 2,
+        "max_rework_cycles": 2,
+        "max_duration_seconds": 3600,
+        "max_artifact_bytes": 10485760,
+        "max_tokens": null
+      },
+      "tokens": {
+        "value": null,
+        "provenance": "unknown"
+      },
+      "cost": {
+        "value": null,
+        "provenance": "unknown"
+      }
+    },
+    "QUALITY": {
+      "iterations": 25,
+      "duration_ms_median": 0.0037999998312443495,
+      "duration_ms_min": 0.0035999983083456755,
+      "duration_ms_max": 0.006300018867477775,
+      "selected_agents": [
+        "feature-engineer"
+      ],
+      "limits": {
+        "max_agent_runs": 6,
+        "max_parallel_agents": 3,
+        "max_retries_per_step": 3,
+        "max_rework_cycles": 3,
+        "max_duration_seconds": 7200,
+        "max_artifact_bytes": 25000000,
+        "max_tokens": null
+      },
+      "tokens": {
+        "value": null,
+        "provenance": "unknown"
+      },
+      "cost": {
+        "value": null,
+        "provenance": "unknown"
+      }
+    },
+    "CRITICAL": {
+      "iterations": 25,
+      "duration_ms_median": 0.0036999990697950125,
+      "duration_ms_min": 0.0034999975468963385,
+      "duration_ms_max": 0.0040000013541430235,
+      "selected_agents": [
+        "feature-engineer"
+      ],
+      "limits": {
+        "max_agent_runs": 8,
+        "max_parallel_agents": 3,
+        "max_retries_per_step": 3,
+        "max_rework_cycles": 3,
+        "max_duration_seconds": 10800,
+        "max_artifact_bytes": 25000000,
+        "max_tokens": null
+      },
+      "tokens": {
+        "value": null,
+        "provenance": "unknown"
+      },
+      "cost": {
+        "value": null,
+        "provenance": "unknown"
+      }
+    }
+  },
+  "limitations": [
+    "single host",
+    "routing microbenchmark only",
+    "no model call",
+    "no billing data"
+  ]
+}

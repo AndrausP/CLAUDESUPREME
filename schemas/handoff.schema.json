@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/schemas/handoff/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "handoff_id", "task_id", "correlation_id", "from_department", "from_agent", "to", "objective", "minimal_context", "relevant_files", "memory_refs", "confirmed_decisions", "acceptance_criteria", "artifacts", "test_results", "issues", "status", "next_action", "evidence_refs", "created_at"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "handoff_id": {"type": "string", "format": "uuid"},
+    "task_id": {"type": "string", "format": "uuid"},
+    "parent_task_id": {"type": ["string", "null"], "format": "uuid"},
+    "correlation_id": {"type": "string", "format": "uuid"},
+    "from_department": {"type": "string"},
+    "from_agent": {"type": "string"},
+    "to": {"type": "string"},
+    "objective": {"type": "string"},
+    "minimal_context": {"type": "string", "maxLength": 4000},
+    "relevant_files": {"type": "array", "items": {"type": "object", "required": ["path", "sha256"]}},
+    "memory_refs": {"type": "array", "items": {"type": "string"}},
+    "confirmed_decisions": {"type": "array", "items": {"type": "string"}},
+    "acceptance_criteria": {"type": "array", "items": {"type": "object"}},
+    "artifacts": {"type": "array", "items": {"type": "object"}},
+    "test_results": {"type": "array", "items": {"type": "object"}},
+    "issues": {"type": "array", "items": {"type": "object"}},
+    "status": {"type": "string"},
+    "next_action": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

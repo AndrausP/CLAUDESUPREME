@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "profile": "QUALITY",
+  "limits": {
+    "max_agent_runs": 6,
+    "max_parallel_agents": 3,
+    "max_retries_per_step": 3,
+    "max_rework_cycles": 3,
+    "max_duration_seconds": 7200,
+    "max_artifact_bytes": 25000000,
+    "max_tokens": null
+  },
+  "enforcement": {
+    "max_tokens": "advisory-when-unobserved",
+    "safety_minimums": "always"
+  }
+}

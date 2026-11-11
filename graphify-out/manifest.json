@@ -1,0 +1,20 @@
+{
+  "docs/knowledge/business-rules.md": {
+    "mtime": 1794417116.1639864,
+    "seen": 1794417558.8774335,
+    "ast_hash": "a7a37822e9d996ef4cd9c843fcd185c7",
+    "semantic_hash": "a7a37822e9d996ef4cd9c843fcd185c7"
+  },
+  "docs/knowledge/errors-aprendidos.md": {
+    "mtime": 1794417116.1649938,
+    "seen": 1794417558.877439,
+    "ast_hash": "e5272f048c558875176730586095328a",
+    "semantic_hash": "e5272f048c558875176730586095328a"
+  },
+  "docs/knowledge/patterns.md": {
+    "mtime": 1794417116.1649938,
+    "seen": 1794417558.8774416,
+    "ast_hash": "bda81d3ed66af289003fae368ecf5130",
+    "semantic_hash": "bda81d3ed66af289003fae368ecf5130"
+  }
+}

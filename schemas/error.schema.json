@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/schemas/error/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["error"],
+  "properties": {
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "message", "retryable", "details", "correlation_id"],
+      "properties": {
+        "code": {"enum": ["INVALID_SCHEMA", "INVALID_TRANSITION", "REVISION_CONFLICT", "BUDGET_EXHAUSTED", "RETRY_LIMIT", "REWORK_LOOP", "DEPENDENCY_BLOCKED", "PERMISSION_DENIED", "UNSAFE_EXTENSION", "CHECKSUM_MISMATCH", "INCOMPATIBLE_VERSION", "STORAGE_FAILURE", "VALIDATION_INCONCLUSIVE", "NOT_FOUND"]},
+        "message": {"type": "string"},
+        "retryable": {"type": "boolean"},
+        "details": {"type": "object"},
+        "correlation_id": {"type": ["string", "null"], "format": "uuid"}
+      }
+    }
+  }
+}

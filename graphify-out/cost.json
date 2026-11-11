@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "date": "2026-11-11T17:19:18.879271+00:00",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "files": 3,
+      "note": "host-subagent token usage unavailable"
+    }
+  ],
+  "total_input_tokens": 0,
+  "total_output_tokens": 0
+}

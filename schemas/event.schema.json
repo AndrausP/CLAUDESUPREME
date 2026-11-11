@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/schemas/event/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "event_type", "correlation_id", "source", "occurred_at", "sequence", "data_classification", "payload", "payload_sha256"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "event_id": {"type": "string", "format": "uuid"},
+    "event_type": {"type": "string", "pattern": "^[a-z]+(?:\\.[a-z]+)+$"},
+    "correlation_id": {"type": "string", "format": "uuid"},
+    "causation_id": {"type": ["string", "null"], "format": "uuid"},
+    "task_id": {"type": ["string", "null"], "format": "uuid"},
+    "source": {"type": "object", "additionalProperties": false, "required": ["component", "version"], "properties": {"component": {"type": "string"}, "version": {"type": "string"}}},
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "sequence": {"type": "integer", "minimum": 0},
+    "data_classification": {"enum": ["public", "internal", "confidential"]},
+    "payload": {"type": "object"},
+    "payload_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

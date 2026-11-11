@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/schemas/budget-profile/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "profile", "limits", "enforcement"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "profile": {"enum": ["ECONOMY", "BALANCED", "QUALITY", "CRITICAL"]},
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_agent_runs", "max_parallel_agents", "max_retries_per_step", "max_rework_cycles", "max_duration_seconds", "max_artifact_bytes", "max_tokens"],
+      "properties": {
+        "max_agent_runs": {"type": "integer", "minimum": 1},
+        "max_parallel_agents": {"type": "integer", "minimum": 1},
+        "max_retries_per_step": {"type": "integer", "minimum": 0},
+        "max_rework_cycles": {"type": "integer", "minimum": 0},
+        "max_duration_seconds": {"type": "integer", "minimum": 1},
+        "max_artifact_bytes": {"type": "integer", "minimum": 1},
+        "max_tokens": {"type": ["integer", "null"], "minimum": 1}
+      }
+    },
+    "enforcement": {"type": "object", "required": ["max_tokens", "safety_minimums"]}
+  }
+}

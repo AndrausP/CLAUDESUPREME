@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/schemas/memory/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "memory_id", "type", "scope", "title", "summary", "content_ref", "origin", "created_at", "confidence", "status", "tags", "relations", "revision", "evidence_refs", "content_sha256"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "memory_id": {"type": "string", "format": "uuid"},
+    "type": {"enum": ["organizational", "project", "department-agent", "episodic"]},
+    "scope": {"type": "string"},
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "maxLength": 4000},
+    "content_ref": {"type": "string"},
+    "origin": {"type": "object", "required": ["type", "id"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "last_validated_at": {"type": ["string", "null"], "format": "date-time"},
+    "confidence": {"enum": ["low", "medium", "high"]},
+    "status": {"enum": ["PROPOSED", "VERIFIED", "OUTDATED", "SUPERSEDED", "REJECTED"]},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "relations": {"type": "array", "items": {"type": "object", "required": ["type", "target"]}},
+    "revision": {"type": "integer", "minimum": 1},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

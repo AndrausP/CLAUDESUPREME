@@ -1,0 +1,36 @@
+{
+  "project": "orchestra-core",
+  "version": "0.1.0",
+  "activeSprint": null,
+  "lastCompletedSprint": "sprint-1",
+  "qa": {
+    "status": "APPROVED",
+    "validatedAt": "2026-11-11",
+    "tests": "77/77",
+    "categories": "23/23",
+    "scenarios": "8/8",
+    "wheelSha256": "232E83BBAED92562BD5D04179928F7BF8C32F6B804B02431DBC388F5E0678682"
+  },
+  "preferences": {
+    "chainVisibility": "hidden",
+    "caveman": "full"
+  },
+  "paths": {
+    "tasks": "docs/tasks",
+    "sprints": "docs/sprints",
+    "knowledge": "docs/knowledge"
+  },
+  "graphify": {
+    "enabled": true,
+    "source": "docs/knowledge",
+    "outPath": "graphify-out",
+    "owner": "writer",
+    "lastIndexed": "2026-11-11T17:19:26.543Z",
+    "nodes": 23,
+    "edges": 18,
+    "communities": 6,
+    "healthWarning": "1 undirected same-endpoint pair collapsed; no missing or dangling endpoints",
+    "semanticTokenUsage": "unknown"
+  }
+}
+

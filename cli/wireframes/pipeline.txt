@@ -1,0 +1,24 @@
+TASK ORC-104 | [!] BLOQUEADA | owner: Integration Engineer | revision: 8
+
+[OK] Planejamento     criterio e escopo aprovados
+[OK] Arquitetura      event.schema.v1 validado
+[>]  Implementacao    ultimo checkpoint 14:32
+[!]  Testes           falta dependencia local: pacote X
+[ ]  Revisao
+[ ]  Entrega
+
+MOTIVO
+Dependencia de teste indisponivel. A execucao principal permanece integra.
+
+ACAO NECESSARIA
+Instalar o extra de teste ou executar `orchestra validate --plain`.
+
+TIMELINE
+14:01  task.created          actor: central-orchestrator
+14:02  task.classified       mode: STANDARD
+14:03  agent.started         integration-engineer
+14:31  validation.completed  [X] Falha | evidence: ev-238
+14:32  checkpoint.created    resume: disponivel
+
+[Enter] Evento  [r] Retomar  [e] Evidencias  [d] Diagnostico  [Esc] Voltar
+

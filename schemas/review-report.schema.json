@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/schemas/review-report/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "review_id", "task_id", "depth", "scope", "security_requested", "verdict", "findings", "specialists", "evidence_refs"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "review_id": {"type": "string", "format": "uuid"},
+    "task_id": {"type": "string", "format": "uuid"},
+    "depth": {"enum": ["QUICK", "NORMAL", "HIGH"]},
+    "scope": {"type": "array", "items": {"type": "string"}},
+    "security_requested": {"type": "boolean"},
+    "verdict": {"enum": ["APPROVED", "APPROVED_WITH_NOTES", "CHANGES_REQUESTED", "INCONCLUSIVE"]},
+    "findings": {"type": "array", "items": {"type": "object", "required": ["finding_id", "severity", "file", "location", "evidence", "impact", "proposed_fix", "confidence"]}},
+    "specialists": {"type": "array", "maxItems": 2, "items": {"type": "object", "required": ["agent_id", "reason_code"]}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}}
+  }
+}

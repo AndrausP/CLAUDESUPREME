@@ -1,0 +1,46 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Packaging output
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Orchestra runtime state (never source control)
+.orchestra/
+
+# Local editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary artifacts
+*.tmp
+*.temp
+*.log
+tmp/
+artifacts/tmp/
+
+# Intentionally tracked when produced:
+# - graphify-out/
+# - reports/qa/
+
+# graphify internals (contain absolute local paths); graph.json and GRAPH_REPORT.md stay tracked
+graphify-out/.graphify_*
+graphify-out/cache/
+**/graphify-out/cache/

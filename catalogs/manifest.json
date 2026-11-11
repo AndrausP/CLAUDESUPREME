@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "organization_id": "orchestra-core-default",
+  "counts": {
+    "departments": 7,
+    "agents": 36,
+    "primary_skills": 36,
+    "shared_skills": 12,
+    "commands": 19
+  },
+  "profiles": [
+    "ECONOMY",
+    "BALANCED",
+    "QUALITY",
+    "CRITICAL"
+  ],
+  "sources": [
+    "catalogs/agents.json",
+    "catalogs/skills.json"
+  ]
+}

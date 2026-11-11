@@ -1,0 +1,16 @@
+{
+  "name": "orchestra",
+  "displayName": "Orchestra Core",
+  "version": "0.1.0",
+  "description": "Native-first organization of 36 on-demand engineering competencies with deterministic local orchestration.",
+  "author": {
+    "name": "Orchestra Core contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "orchestration",
+    "workflow",
+    "quality"
+  ]
+}

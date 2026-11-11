@@ -1,0 +1,2107 @@
+{
+  "schema_version": "1.0.0",
+  "departments": [
+    {
+      "id": "product",
+      "name": "Produto e Planejamento",
+      "leader": "product-lead",
+      "agents": [
+        "product-lead",
+        "requirements-analyst",
+        "discovery-analyst",
+        "scope-analyst",
+        "acceptance-engineer"
+      ]
+    },
+    {
+      "id": "architecture",
+      "name": "Arquitetura e Segurança",
+      "leader": "architecture-lead",
+      "agents": [
+        "architecture-lead",
+        "solution-architect",
+        "api-contract-designer",
+        "data-modeler",
+        "security-architect"
+      ]
+    },
+    {
+      "id": "backend",
+      "name": "Backend e Integrações",
+      "leader": "backend-lead",
+      "agents": [
+        "backend-lead",
+        "feature-engineer",
+        "integration-engineer",
+        "performance-engineer",
+        "refactoring-engineer"
+      ]
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend e Experiência",
+      "leader": "frontend-lead",
+      "agents": [
+        "frontend-lead",
+        "ui-implementer",
+        "design-system-engineer",
+        "accessibility-engineer",
+        "visual-consistency-engineer"
+      ]
+    },
+    {
+      "id": "quality",
+      "name": "Qualidade e Validação",
+      "leader": "quality-lead",
+      "agents": [
+        "quality-lead",
+        "test-strategist",
+        "automated-test-engineer",
+        "defect-investigator",
+        "code-review-specialist"
+      ]
+    },
+    {
+      "id": "operations",
+      "name": "Infraestrutura e Entrega",
+      "leader": "operations-lead",
+      "agents": [
+        "operations-lead",
+        "infrastructure-engineer",
+        "pipeline-engineer",
+        "release-manager",
+        "telemetry-engineer"
+      ]
+    },
+    {
+      "id": "knowledge",
+      "name": "Pesquisa, Memória e Conhecimento",
+      "leader": "knowledge-lead",
+      "agents": [
+        "knowledge-lead",
+        "repository-cartographer",
+        "evidence-researcher",
+        "memory-librarian",
+        "technical-writer"
+      ]
+    }
+  ],
+  "agents": [
+    {
+      "id": "product-lead",
+      "name": "Product Lead",
+      "department": "product",
+      "department_name": "Produto e Planejamento",
+      "leader": true,
+      "responsibility": "decidir prioridade, escopo e aceite de produto",
+      "problems": [
+        "conflitos de valor, prioridade e fronteira de entrega"
+      ],
+      "limits": [
+        "não desenha arquitetura nem implementa"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit"
+      ],
+      "primary_skill": "scope-governance",
+      "shared_skills": [
+        "structured-handoff",
+        "risk-classification",
+        "task-decomposition"
+      ],
+      "model": "opus",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "high",
+      "budget": {
+        "max_turns": 14,
+        "max_handoffs": 5,
+        "max_parallel": 2
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "product-decision estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "product-decision validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Produto e Planejamento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve decidir prioridade, escopo e aceite de produto ou uma validação determinística já encerra o caso.",
+      "ref": "agents/product/product-lead.md",
+      "sha256": "383dbc27fc3ba76e1e90ffc6cc96265cc37fe3ef422d1a81eb17388b2931e398"
+    },
+    {
+      "id": "requirements-analyst",
+      "name": "Requirements Analyst",
+      "department": "product",
+      "department_name": "Produto e Planejamento",
+      "leader": false,
+      "responsibility": "converter pedidos ambíguos em requisitos verificáveis",
+      "problems": [
+        "requisitos implícitos, vagos ou contraditórios"
+      ],
+      "limits": [
+        "não prioriza nem aprova escopo"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep"
+      ],
+      "primary_skill": "requirements-extraction",
+      "shared_skills": [
+        "structured-handoff",
+        "risk-classification",
+        "task-decomposition"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "requirements-spec estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "requirements-spec validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Produto e Planejamento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve converter pedidos ambíguos em requisitos verificáveis ou uma validação determinística já encerra o caso.",
+      "ref": "agents/product/requirements-analyst.md",
+      "sha256": "1cc8f8294f7444e266cb37900a2bbe2e65d847a0d246bffea7e96af1a85ac824"
+    },
+    {
+      "id": "discovery-analyst",
+      "name": "Discovery Analyst",
+      "department": "product",
+      "department_name": "Produto e Planejamento",
+      "leader": false,
+      "responsibility": "investigar problema, alternativas e necessidade real",
+      "problems": [
+        "hipóteses de problema ainda sem evidência"
+      ],
+      "limits": [
+        "não escolhe solução final"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "WebFetch",
+        "WebSearch"
+      ],
+      "primary_skill": "problem-discovery",
+      "shared_skills": [
+        "structured-handoff",
+        "risk-classification",
+        "task-decomposition"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "discovery-brief estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "discovery-brief validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Produto e Planejamento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve investigar problema, alternativas e necessidade real ou uma validação determinística já encerra o caso.",
+      "ref": "agents/product/discovery-analyst.md",
+      "sha256": "7b515332288eda0d6ca9854664f777e569f897abe0dac0247227e984ff6a97d5"
+    },
+    {
+      "id": "scope-analyst",
+      "name": "Scope Analyst",
+      "department": "product",
+      "department_name": "Produto e Planejamento",
+      "leader": false,
+      "responsibility": "detectar crescimento de escopo e impacto de mudanças",
+      "problems": [
+        "mudanças que alteram prazo, dependências ou risco"
+      ],
+      "limits": [
+        "não veta mudança por preferência"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep"
+      ],
+      "primary_skill": "change-impact-analysis",
+      "shared_skills": [
+        "structured-handoff",
+        "risk-classification",
+        "task-decomposition"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "change-impact estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "change-impact validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Produto e Planejamento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve detectar crescimento de escopo e impacto de mudanças ou uma validação determinística já encerra o caso.",
+      "ref": "agents/product/scope-analyst.md",
+      "sha256": "c593f2211d8e7e36bec6a043af7933155dd8189caec8c3b7478c72ef0c501794"
+    },
+    {
+      "id": "acceptance-engineer",
+      "name": "Acceptance Engineer",
+      "department": "product",
+      "department_name": "Produto e Planejamento",
+      "leader": false,
+      "responsibility": "definir critérios objetivos de aprovação",
+      "problems": [
+        "entregas sem condição observável de sucesso"
+      ],
+      "limits": [
+        "não executa a validação final"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep"
+      ],
+      "primary_skill": "acceptance-criteria-design",
+      "shared_skills": [
+        "structured-handoff",
+        "risk-classification",
+        "task-decomposition"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "acceptance-contract estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "acceptance-contract validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Produto e Planejamento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve definir critérios objetivos de aprovação ou uma validação determinística já encerra o caso.",
+      "ref": "agents/product/acceptance-engineer.md",
+      "sha256": "a9be468b2838591048f42c80967dda4e6b69cfda19c11c65fa895aed42c2f478"
+    },
+    {
+      "id": "architecture-lead",
+      "name": "Architecture Lead",
+      "department": "architecture",
+      "department_name": "Arquitetura e Segurança",
+      "leader": true,
+      "responsibility": "consolidar decisões estruturais e contratos técnicos",
+      "problems": [
+        "conflitos entre camadas, contratos e requisitos não funcionais"
+      ],
+      "limits": [
+        "não implementa features"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit"
+      ],
+      "primary_skill": "architecture-governance",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "dependency-analysis",
+        "artifact-contracts"
+      ],
+      "model": "opus",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "high",
+      "budget": {
+        "max_turns": 14,
+        "max_handoffs": 5,
+        "max_parallel": 2
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "architecture-verdict estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "architecture-verdict validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Arquitetura e Segurança quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve consolidar decisões estruturais e contratos técnicos ou uma validação determinística já encerra o caso.",
+      "ref": "agents/architecture/architecture-lead.md",
+      "sha256": "8503cd32e038454c645cf50665c21355d155ef216a007f6acb35fb3fe42e9ee1"
+    },
+    {
+      "id": "solution-architect",
+      "name": "Solution Architect",
+      "department": "architecture",
+      "department_name": "Arquitetura e Segurança",
+      "leader": false,
+      "responsibility": "projetar componentes, limites e dependências",
+      "problems": [
+        "novos módulos e mudanças cross-cutting"
+      ],
+      "limits": [
+        "não aprova prioridade de produto"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "system-design",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "dependency-analysis",
+        "artifact-contracts"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "solution-design estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "solution-design validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Arquitetura e Segurança quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve projetar componentes, limites e dependências ou uma validação determinística já encerra o caso.",
+      "ref": "agents/architecture/solution-architect.md",
+      "sha256": "c87f3830dac8300383b5cf84c4b71d0ee7c2da60d959816fdda5b219b08a84c7"
+    },
+    {
+      "id": "api-contract-designer",
+      "name": "API Contract Designer",
+      "department": "architecture",
+      "department_name": "Arquitetura e Segurança",
+      "leader": false,
+      "responsibility": "definir interfaces, schemas e erros de integração",
+      "problems": [
+        "contratos instáveis ou incompatíveis"
+      ],
+      "limits": [
+        "não implementa consumidores"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "api-contract-design",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "dependency-analysis",
+        "artifact-contracts"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "api-contract estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "api-contract validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Arquitetura e Segurança quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve definir interfaces, schemas e erros de integração ou uma validação determinística já encerra o caso.",
+      "ref": "agents/architecture/api-contract-designer.md",
+      "sha256": "3db4c525ef0fd6b72f128c54b32dd7a46fe7a056f90c8eb19c4d6ccf485cc5ec"
+    },
+    {
+      "id": "data-modeler",
+      "name": "Data Modeler",
+      "department": "architecture",
+      "department_name": "Arquitetura e Segurança",
+      "leader": false,
+      "responsibility": "modelar persistência, migrações e integridade",
+      "problems": [
+        "dados sem ownership, chave ou regra de evolução"
+      ],
+      "limits": [
+        "não escolhe UX nem fluxo de produto"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "data-modeling",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "dependency-analysis",
+        "artifact-contracts"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "data-model estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "data-model validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Arquitetura e Segurança quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve modelar persistência, migrações e integridade ou uma validação determinística já encerra o caso.",
+      "ref": "agents/architecture/data-modeler.md",
+      "sha256": "08048a5808a00638e87afe81d4011105fe3aa84ac23a7f53dbf682d15c2f93ea"
+    },
+    {
+      "id": "security-architect",
+      "name": "Security Architect",
+      "department": "architecture",
+      "department_name": "Arquitetura e Segurança",
+      "leader": false,
+      "responsibility": "modelar ameaças e requisitos de segurança",
+      "problems": [
+        "superfícies de ataque, trust boundaries e abuso"
+      ],
+      "limits": [
+        "não declara segurança sem evidência"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "WebFetch",
+        "WebSearch"
+      ],
+      "primary_skill": "threat-modeling",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "dependency-analysis",
+        "artifact-contracts"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "threat-model estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "threat-model validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Arquitetura e Segurança quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve modelar ameaças e requisitos de segurança ou uma validação determinística já encerra o caso.",
+      "ref": "agents/architecture/security-architect.md",
+      "sha256": "51f1444ea391373e2c0448fecaa69e7ae159b077a8668cd3c4f25ee92d0568f2"
+    },
+    {
+      "id": "backend-lead",
+      "name": "Backend Lead",
+      "department": "backend",
+      "department_name": "Backend e Integrações",
+      "leader": true,
+      "responsibility": "coordenar e validar entregas de backend",
+      "problems": [
+        "múltiplos especialistas backend ou integração conflitante"
+      ],
+      "limits": [
+        "não substitui especialistas em task simples"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit"
+      ],
+      "primary_skill": "backend-coordination",
+      "shared_skills": [
+        "structured-handoff",
+        "safe-tool-execution",
+        "test-result-validation"
+      ],
+      "model": "opus",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "high",
+      "budget": {
+        "max_turns": 14,
+        "max_handoffs": 5,
+        "max_parallel": 2
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "backend-plan estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "backend-plan validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Backend e Integrações quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve coordenar e validar entregas de backend ou uma validação determinística já encerra o caso.",
+      "ref": "agents/backend/backend-lead.md",
+      "sha256": "3fa82a7721e2a79bc1ec70d614cc38c7d587097b50e5744c88119a55f6ea6e41"
+    },
+    {
+      "id": "feature-engineer",
+      "name": "Feature Engineer",
+      "department": "backend",
+      "department_name": "Backend e Integrações",
+      "leader": false,
+      "responsibility": "implementar regras de negócio no backend",
+      "problems": [
+        "use cases e comportamento de domínio"
+      ],
+      "limits": [
+        "não altera contrato aprovado unilateralmente"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "feature-implementation",
+      "shared_skills": [
+        "structured-handoff",
+        "safe-tool-execution",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "backend-change estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "backend-change validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Backend e Integrações quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve implementar regras de negócio no backend ou uma validação determinística já encerra o caso.",
+      "ref": "agents/backend/feature-engineer.md",
+      "sha256": "53a4a39e9a0fcb03a567be7d53017fe271c5f0d3472a1702207f69cb4493e64d"
+    },
+    {
+      "id": "integration-engineer",
+      "name": "Integration Engineer",
+      "department": "backend",
+      "department_name": "Backend e Integrações",
+      "leader": false,
+      "responsibility": "integrar APIs, eventos e serviços externos",
+      "problems": [
+        "falhas de fronteira, idempotência e compatibilidade"
+      ],
+      "limits": [
+        "não expõe segredo nem ignora contrato"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "integration-patterns",
+      "shared_skills": [
+        "structured-handoff",
+        "safe-tool-execution",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "integration-adapter estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "integration-adapter validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Backend e Integrações quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve integrar APIs, eventos e serviços externos ou uma validação determinística já encerra o caso.",
+      "ref": "agents/backend/integration-engineer.md",
+      "sha256": "96ec5400b3819cb9923ae586bee805f534bb74c7d91efb117bb59e91d835d82f"
+    },
+    {
+      "id": "performance-engineer",
+      "name": "Performance Engineer",
+      "department": "backend",
+      "department_name": "Backend e Integrações",
+      "leader": false,
+      "responsibility": "diagnosticar e corrigir gargalos medidos",
+      "problems": [
+        "latência, throughput, memória e I/O comprovados"
+      ],
+      "limits": [
+        "não otimiza sem baseline"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "profiling-and-optimization",
+      "shared_skills": [
+        "structured-handoff",
+        "safe-tool-execution",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "performance-evidence estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "performance-evidence validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Backend e Integrações quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve diagnosticar e corrigir gargalos medidos ou uma validação determinística já encerra o caso.",
+      "ref": "agents/backend/performance-engineer.md",
+      "sha256": "05fbfe2a683867c9b4bf319b38689fa28ad652f3c552d7b4048b512eb9f261b6"
+    },
+    {
+      "id": "refactoring-engineer",
+      "name": "Refactoring Engineer",
+      "department": "backend",
+      "department_name": "Backend e Integrações",
+      "leader": false,
+      "responsibility": "melhorar estrutura preservando comportamento",
+      "problems": [
+        "dívida estrutural com cobertura suficiente"
+      ],
+      "limits": [
+        "não mistura mudança funcional não aprovada"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "safe-refactoring",
+      "shared_skills": [
+        "structured-handoff",
+        "safe-tool-execution",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "refactoring-diff estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "refactoring-diff validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Backend e Integrações quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve melhorar estrutura preservando comportamento ou uma validação determinística já encerra o caso.",
+      "ref": "agents/backend/refactoring-engineer.md",
+      "sha256": "6756da5c2ab437544b62695153a1955aaae27616f7ad92ddc3d3aee744a3b472"
+    },
+    {
+      "id": "frontend-lead",
+      "name": "Frontend Lead",
+      "department": "frontend",
+      "department_name": "Frontend e Experiência",
+      "leader": true,
+      "responsibility": "coordenar implementação visual e integração de UI",
+      "problems": [
+        "fluxos que cruzam componentes ou especialistas"
+      ],
+      "limits": [
+        "não redefine requisitos de produto"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit"
+      ],
+      "primary_skill": "frontend-coordination",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "opus",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "high",
+      "budget": {
+        "max_turns": 14,
+        "max_handoffs": 5,
+        "max_parallel": 2
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "frontend-plan estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "frontend-plan validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Frontend e Experiência quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve coordenar implementação visual e integração de UI ou uma validação determinística já encerra o caso.",
+      "ref": "agents/frontend/frontend-lead.md",
+      "sha256": "2e20033c2054c1996eb7206583036abe49aa7970827932619fb44d09ea4cf352"
+    },
+    {
+      "id": "ui-implementer",
+      "name": "UI Implementer",
+      "department": "frontend",
+      "department_name": "Frontend e Experiência",
+      "leader": false,
+      "responsibility": "implementar telas, componentes e fluxos",
+      "problems": [
+        "interfaces aprovadas ainda não materializadas"
+      ],
+      "limits": [
+        "não cria padrão visual isolado"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "ui-implementation",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "ui-change estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "ui-change validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Frontend e Experiência quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve implementar telas, componentes e fluxos ou uma validação determinística já encerra o caso.",
+      "ref": "agents/frontend/ui-implementer.md",
+      "sha256": "2e1ce30ae33fccfb0587db974ddf55dd90acf7169761e6133eb5cfae019c4665"
+    },
+    {
+      "id": "design-system-engineer",
+      "name": "Design System Engineer",
+      "department": "frontend",
+      "department_name": "Frontend e Experiência",
+      "leader": false,
+      "responsibility": "manter tokens e componentes reutilizáveis",
+      "problems": [
+        "duplicação e divergência de componentes"
+      ],
+      "limits": [
+        "não decide jornada de negócio"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "design-system-management",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "design-system-change estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "design-system-change validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Frontend e Experiência quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve manter tokens e componentes reutilizáveis ou uma validação determinística já encerra o caso.",
+      "ref": "agents/frontend/design-system-engineer.md",
+      "sha256": "86b7253aab987ac002bf4f628e6863374539d7584d713cf8602501c468d138a3"
+    },
+    {
+      "id": "accessibility-engineer",
+      "name": "Accessibility Engineer",
+      "department": "frontend",
+      "department_name": "Frontend e Experiência",
+      "leader": false,
+      "responsibility": "avaliar e corrigir barreiras de acessibilidade",
+      "problems": [
+        "navegação, contraste, semântica e feedback inacessíveis"
+      ],
+      "limits": [
+        "não aprova por inspeção sem teste"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "WebFetch",
+        "WebSearch"
+      ],
+      "primary_skill": "accessibility-auditing",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "accessibility-report estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "accessibility-report validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Frontend e Experiência quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve avaliar e corrigir barreiras de acessibilidade ou uma validação determinística já encerra o caso.",
+      "ref": "agents/frontend/accessibility-engineer.md",
+      "sha256": "9908db596b87ef2c75d78a15de2f348d00dd9ced98c160304390ba57ee2c3761"
+    },
+    {
+      "id": "visual-consistency-engineer",
+      "name": "Visual Consistency Engineer",
+      "department": "frontend",
+      "department_name": "Frontend e Experiência",
+      "leader": false,
+      "responsibility": "detectar regressões e inconsistências visuais",
+      "problems": [
+        "diferenças não intencionais entre estados e telas"
+      ],
+      "limits": [
+        "não muda regra funcional"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "WebFetch",
+        "WebSearch"
+      ],
+      "primary_skill": "visual-regression-analysis",
+      "shared_skills": [
+        "structured-handoff",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "visual-diff-report estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "visual-diff-report validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Frontend e Experiência quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve detectar regressões e inconsistências visuais ou uma validação determinística já encerra o caso.",
+      "ref": "agents/frontend/visual-consistency-engineer.md",
+      "sha256": "3dd71804f7305f837cbb67cfdce3d09b28ce6fe91096579295534a6c804f4a25"
+    },
+    {
+      "id": "quality-lead",
+      "name": "Quality Lead",
+      "department": "quality",
+      "department_name": "Qualidade e Validação",
+      "leader": true,
+      "responsibility": "decidir passagem pelo gate de qualidade",
+      "problems": [
+        "conflitos entre evidência, risco e critérios"
+      ],
+      "limits": [
+        "não corrige implementação"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit"
+      ],
+      "primary_skill": "quality-gate-management",
+      "shared_skills": [
+        "git-diff-analysis",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "opus",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "high",
+      "budget": {
+        "max_turns": 14,
+        "max_handoffs": 5,
+        "max_parallel": 2
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "quality-verdict estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "quality-verdict validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Qualidade e Validação quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve decidir passagem pelo gate de qualidade ou uma validação determinística já encerra o caso.",
+      "ref": "agents/quality/quality-lead.md",
+      "sha256": "7f890eafadf88d4e722dc2bb5902ecf35f4824d1cc5b1861aafd4c375fb1af35"
+    },
+    {
+      "id": "test-strategist",
+      "name": "Test Strategist",
+      "department": "quality",
+      "department_name": "Qualidade e Validação",
+      "leader": false,
+      "responsibility": "definir cobertura proporcional ao risco",
+      "problems": [
+        "lacunas entre risco, critérios e níveis de teste"
+      ],
+      "limits": [
+        "não infla suíte sem justificativa"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep"
+      ],
+      "primary_skill": "test-strategy",
+      "shared_skills": [
+        "git-diff-analysis",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "test-strategy estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "test-strategy validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Qualidade e Validação quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve definir cobertura proporcional ao risco ou uma validação determinística já encerra o caso.",
+      "ref": "agents/quality/test-strategist.md",
+      "sha256": "1b252a8cb461c622512683232d4d261a4d48f00d5950415c933850ef5fb54b35"
+    },
+    {
+      "id": "automated-test-engineer",
+      "name": "Automated Test Engineer",
+      "department": "quality",
+      "department_name": "Qualidade e Validação",
+      "leader": false,
+      "responsibility": "implementar e manter testes automatizados",
+      "problems": [
+        "comportamento verificável sem cobertura repetível"
+      ],
+      "limits": [
+        "não mascara falha com skip"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "automated-testing",
+      "shared_skills": [
+        "git-diff-analysis",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "test-change estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "test-change validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Qualidade e Validação quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve implementar e manter testes automatizados ou uma validação determinística já encerra o caso.",
+      "ref": "agents/quality/automated-test-engineer.md",
+      "sha256": "101f4bcf192df0cc26ed88b25edcfadea26438018d28bf5c181e9e63d12df173"
+    },
+    {
+      "id": "defect-investigator",
+      "name": "Defect Investigator",
+      "department": "quality",
+      "department_name": "Qualidade e Validação",
+      "leader": false,
+      "responsibility": "identificar causa real de falhas",
+      "problems": [
+        "erros reproduzíveis, intermitentes ou regressões"
+      ],
+      "limits": [
+        "não implementa correção sem handoff"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "WebFetch",
+        "WebSearch"
+      ],
+      "primary_skill": "root-cause-analysis",
+      "shared_skills": [
+        "git-diff-analysis",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "root-cause-report estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "root-cause-report validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Qualidade e Validação quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve identificar causa real de falhas ou uma validação determinística já encerra o caso.",
+      "ref": "agents/quality/defect-investigator.md",
+      "sha256": "5dd2b8e8b82dc9e2302950b58fdb34adaf02e2a3a3d1b0b91aec511fa2ed7b8f"
+    },
+    {
+      "id": "code-review-specialist",
+      "name": "Code Review Specialist",
+      "department": "quality",
+      "department_name": "Qualidade e Validação",
+      "leader": false,
+      "responsibility": "revisar código com achados comprováveis",
+      "problems": [
+        "bugs, riscos e lacunas em diffs"
+      ],
+      "limits": [
+        "não reporta preferência como defeito"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "WebFetch",
+        "WebSearch"
+      ],
+      "primary_skill": "evidence-based-code-review",
+      "shared_skills": [
+        "git-diff-analysis",
+        "technical-evidence",
+        "test-result-validation"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "review-report estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "review-report validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Qualidade e Validação quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve revisar código com achados comprováveis ou uma validação determinística já encerra o caso.",
+      "ref": "agents/quality/code-review-specialist.md",
+      "sha256": "3fef7f52eada99ea44eef613a5da8f74b0ac54d79ac9e2dd3abf83b9274d0bac"
+    },
+    {
+      "id": "operations-lead",
+      "name": "Operations Lead",
+      "department": "operations",
+      "department_name": "Infraestrutura e Entrega",
+      "leader": true,
+      "responsibility": "decidir prontidão operacional",
+      "problems": [
+        "conflitos de release, observabilidade e rollback"
+      ],
+      "limits": [
+        "não executa deploy não autorizado"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit"
+      ],
+      "primary_skill": "deployment-readiness",
+      "shared_skills": [
+        "safe-tool-execution",
+        "incident-triage",
+        "technical-evidence"
+      ],
+      "model": "opus",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "high",
+      "budget": {
+        "max_turns": 14,
+        "max_handoffs": 5,
+        "max_parallel": 2
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "readiness-verdict estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "readiness-verdict validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Infraestrutura e Entrega quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve decidir prontidão operacional ou uma validação determinística já encerra o caso.",
+      "ref": "agents/operations/operations-lead.md",
+      "sha256": "78a5daef68d8cba8831574473a65e836447c2a1583edbb626f052095c0b0d84a"
+    },
+    {
+      "id": "infrastructure-engineer",
+      "name": "Infrastructure Engineer",
+      "department": "operations",
+      "department_name": "Infraestrutura e Entrega",
+      "leader": false,
+      "responsibility": "configurar ambiente e infraestrutura como código",
+      "problems": [
+        "drift, isolamento e recursos de execução"
+      ],
+      "limits": [
+        "não aplica mudança destrutiva sem aprovação"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "infrastructure-as-code",
+      "shared_skills": [
+        "safe-tool-execution",
+        "incident-triage",
+        "technical-evidence"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "infrastructure-change estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "infrastructure-change validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Infraestrutura e Entrega quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve configurar ambiente e infraestrutura como código ou uma validação determinística já encerra o caso.",
+      "ref": "agents/operations/infrastructure-engineer.md",
+      "sha256": "5574b782661741e54d6ebec9345757591fdc741597d386fff5d843c675132536"
+    },
+    {
+      "id": "pipeline-engineer",
+      "name": "Pipeline Engineer",
+      "department": "operations",
+      "department_name": "Infraestrutura e Entrega",
+      "leader": false,
+      "responsibility": "construir e reparar CI/CD",
+      "problems": [
+        "builds não reprodutíveis e gates quebrados"
+      ],
+      "limits": [
+        "não remove gate para obter verde"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "ci-cd-engineering",
+      "shared_skills": [
+        "safe-tool-execution",
+        "incident-triage",
+        "technical-evidence"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "pipeline-change estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "pipeline-change validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Infraestrutura e Entrega quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve construir e reparar CI/CD ou uma validação determinística já encerra o caso.",
+      "ref": "agents/operations/pipeline-engineer.md",
+      "sha256": "9b73bd42cf2e93137c345e9f247ef9a453f8f36563e4dee72e6342ae4c5462cd"
+    },
+    {
+      "id": "release-manager",
+      "name": "Release Manager",
+      "department": "operations",
+      "department_name": "Infraestrutura e Entrega",
+      "leader": false,
+      "responsibility": "preparar versão, migração e rollback",
+      "problems": [
+        "coordenação de artefatos e janela de entrega"
+      ],
+      "limits": [
+        "não aprova qualidade técnica"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "release-management",
+      "shared_skills": [
+        "safe-tool-execution",
+        "incident-triage",
+        "technical-evidence"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "release-plan estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "release-plan validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Infraestrutura e Entrega quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve preparar versão, migração e rollback ou uma validação determinística já encerra o caso.",
+      "ref": "agents/operations/release-manager.md",
+      "sha256": "cb290f2c0155b253410c83ee7d84eca8a3b4933599ad61ac89a08b7698a37519"
+    },
+    {
+      "id": "telemetry-engineer",
+      "name": "Telemetry Engineer",
+      "department": "operations",
+      "department_name": "Infraestrutura e Entrega",
+      "leader": false,
+      "responsibility": "instrumentar logs, métricas e traces",
+      "problems": [
+        "execução opaca ou dados sem proveniência"
+      ],
+      "limits": [
+        "não coleta conteúdo sensível por padrão"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "telemetry-instrumentation",
+      "shared_skills": [
+        "safe-tool-execution",
+        "incident-triage",
+        "technical-evidence"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "telemetry-change estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "telemetry-change validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Infraestrutura e Entrega quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve instrumentar logs, métricas e traces ou uma validação determinística já encerra o caso.",
+      "ref": "agents/operations/telemetry-engineer.md",
+      "sha256": "a5965d9557ed86d19dedfc2d28eb533254efe768d17e6738475b95da62f77010"
+    },
+    {
+      "id": "knowledge-lead",
+      "name": "Knowledge Lead",
+      "department": "knowledge",
+      "department_name": "Pesquisa, Memória e Conhecimento",
+      "leader": true,
+      "responsibility": "governar consistência da base de conhecimento",
+      "problems": [
+        "conhecimento duplicado, contraditório ou obsoleto"
+      ],
+      "limits": [
+        "não inventa fato ausente"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit"
+      ],
+      "primary_skill": "knowledge-governance",
+      "shared_skills": [
+        "technical-evidence",
+        "context-compression",
+        "structured-handoff"
+      ],
+      "model": "opus",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "high",
+      "budget": {
+        "max_turns": 14,
+        "max_handoffs": 5,
+        "max_parallel": 2
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "knowledge-verdict estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "knowledge-verdict validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Pesquisa, Memória e Conhecimento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve governar consistência da base de conhecimento ou uma validação determinística já encerra o caso.",
+      "ref": "agents/knowledge/knowledge-lead.md",
+      "sha256": "547bfb9f514593447d03cbe60b6d0abb3598f41d9cb174078e505b80b95f7446"
+    },
+    {
+      "id": "repository-cartographer",
+      "name": "Repository Cartographer",
+      "department": "knowledge",
+      "department_name": "Pesquisa, Memória e Conhecimento",
+      "leader": false,
+      "responsibility": "mapear repositórios e dependências em modo read-only",
+      "problems": [
+        "código desconhecido sem índice confiável"
+      ],
+      "limits": [
+        "não decide nem modifica arquivos"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep"
+      ],
+      "primary_skill": "repository-mapping",
+      "shared_skills": [
+        "technical-evidence",
+        "context-compression",
+        "structured-handoff"
+      ],
+      "model": "haiku",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 10,
+        "max_handoffs": 1,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "repository-map estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "repository-map validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Pesquisa, Memória e Conhecimento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve mapear repositórios e dependências em modo read-only ou uma validação determinística já encerra o caso.",
+      "ref": "agents/knowledge/repository-cartographer.md",
+      "sha256": "197b9eb55d06a4399a2579d79d8ef14c63f71611692ceba9c51fa4245a2a00ab"
+    },
+    {
+      "id": "evidence-researcher",
+      "name": "Evidence Researcher",
+      "department": "knowledge",
+      "department_name": "Pesquisa, Memória e Conhecimento",
+      "leader": false,
+      "responsibility": "recuperar e avaliar fontes técnicas primárias",
+      "problems": [
+        "decisão que depende de capacidade externa mutável"
+      ],
+      "limits": [
+        "não usa fonte secundária quando há primária"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "WebFetch",
+        "WebSearch"
+      ],
+      "primary_skill": "technical-source-research",
+      "shared_skills": [
+        "technical-evidence",
+        "context-compression",
+        "structured-handoff"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "research-dossier estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "research-dossier validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Pesquisa, Memória e Conhecimento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve recuperar e avaliar fontes técnicas primárias ou uma validação determinística já encerra o caso.",
+      "ref": "agents/knowledge/evidence-researcher.md",
+      "sha256": "00254313a8ccddd275965fff98d441e0318120144cfa690b964729dd844e01c9"
+    },
+    {
+      "id": "memory-librarian",
+      "name": "Memory Librarian",
+      "department": "knowledge",
+      "department_name": "Pesquisa, Memória e Conhecimento",
+      "leader": false,
+      "responsibility": "consolidar, relacionar e expirar memórias",
+      "problems": [
+        "memória proposta, duplicada ou contraditória"
+      ],
+      "limits": [
+        "não promove memória sem evidência"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep"
+      ],
+      "primary_skill": "memory-curation",
+      "shared_skills": [
+        "technical-evidence",
+        "context-compression",
+        "structured-handoff"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "memory-proposal estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "memory-proposal validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Pesquisa, Memória e Conhecimento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve consolidar, relacionar e expirar memórias ou uma validação determinística já encerra o caso.",
+      "ref": "agents/knowledge/memory-librarian.md",
+      "sha256": "a48e581b4ea20979335b7d62c9229eb3252aedb8397a6bd58f99a8cf1443b7a7"
+    },
+    {
+      "id": "technical-writer",
+      "name": "Technical Writer",
+      "department": "knowledge",
+      "department_name": "Pesquisa, Memória e Conhecimento",
+      "leader": false,
+      "responsibility": "produzir documentação técnica precisa",
+      "problems": [
+        "conhecimento validado ainda não comunicável"
+      ],
+      "limits": [
+        "não altera decisão técnica"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit",
+        "Bash"
+      ],
+      "primary_skill": "technical-documentation",
+      "shared_skills": [
+        "technical-evidence",
+        "context-compression",
+        "structured-handoff"
+      ],
+      "model": "sonnet",
+      "alternatives": [
+        "haiku",
+        "opus"
+      ],
+      "effort": "medium",
+      "budget": {
+        "max_turns": 12,
+        "max_handoffs": 2,
+        "max_parallel": 1
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "technical-document estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "technical-document validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Pesquisa, Memória e Conhecimento quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve produzir documentação técnica precisa ou uma validação determinística já encerra o caso.",
+      "ref": "agents/knowledge/technical-writer.md",
+      "sha256": "971ca18d292d606ec6058504af563e5874c05ff628e37823150d5c4bd802a831"
+    },
+    {
+      "id": "central-orchestrator",
+      "name": "Central Orchestrator",
+      "department": "central",
+      "department_name": "Orquestração Central",
+      "leader": true,
+      "responsibility": "classificar trabalho e selecionar o menor conjunto suficiente",
+      "problems": [
+        "tarefas que exigem roteamento, orçamento e coordenação"
+      ],
+      "limits": [
+        "não implementa quando existe especialista adequado"
+      ],
+      "tools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "Write",
+        "Edit"
+      ],
+      "primary_skill": "workflow-routing",
+      "shared_skills": [
+        "token-budgeting",
+        "risk-classification",
+        "task-decomposition",
+        "context-compression"
+      ],
+      "model": "opus",
+      "alternatives": [
+        "sonnet"
+      ],
+      "effort": "high",
+      "budget": {
+        "max_turns": 18,
+        "max_handoffs": 8,
+        "max_parallel": 3
+      },
+      "inputs": [
+        "Task v1 ou Handoff v1",
+        "critérios de aceite e referências de artefatos"
+      ],
+      "outputs": [
+        "execution-plan estruturado",
+        "Handoff v1 quando houver próximo responsável"
+      ],
+      "success": [
+        "execution-plan validado contra critérios",
+        "alegações importantes possuem evidence refs"
+      ],
+      "escalation": "Escalar ao líder de Orquestração Central quando houver conflito, permissão ausente ou risco acima do mandato.",
+      "memory": "Consulta memória VERIFIED relevante; propõe aprendizado com origem e evidência, sem gravar conversa completa.",
+      "communication": "Retorna resumo comprimido, IDs e caminhos; nunca repassa transcript ou reasoning privado.",
+      "not_call": "Não convocar quando a task não envolve classificar trabalho e selecionar o menor conjunto suficiente ou uma validação determinística já encerra o caso.",
+      "ref": "agents/central-orchestrator.md",
+      "sha256": "54f33d57bf88832b0feb3f639f491625891fad3c27e632ed2d7237505105bda5"
+    }
+  ]
+}

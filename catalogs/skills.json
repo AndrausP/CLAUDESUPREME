@@ -1,0 +1,1213 @@
+{
+  "schema_version": "1.0.0",
+  "primary": [
+    {
+      "id": "scope-governance",
+      "kind": "primary",
+      "owner": "product-lead",
+      "responsibility": "decidir prioridade, escopo e aceite de produto",
+      "tags": [
+        "product",
+        "product-decision",
+        "primary"
+      ],
+      "task_types": [
+        "conflitos de valor, prioridade e fronteira de entrega"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/scope-governance/SKILL.md",
+      "sha256": "f545d68b8fe8f6ccfc2bc1f13fe524c4ff3da7102bfdc1016cf93a1d33032b40"
+    },
+    {
+      "id": "requirements-extraction",
+      "kind": "primary",
+      "owner": "requirements-analyst",
+      "responsibility": "converter pedidos ambíguos em requisitos verificáveis",
+      "tags": [
+        "product",
+        "requirements-spec",
+        "primary"
+      ],
+      "task_types": [
+        "requisitos implícitos, vagos ou contraditórios"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/requirements-extraction/SKILL.md",
+      "sha256": "6d24c902f696f752a3af520e7616e5b575bfc36b1d2112bf2ea8b5cdd987342b"
+    },
+    {
+      "id": "problem-discovery",
+      "kind": "primary",
+      "owner": "discovery-analyst",
+      "responsibility": "investigar problema, alternativas e necessidade real",
+      "tags": [
+        "product",
+        "discovery-brief",
+        "primary"
+      ],
+      "task_types": [
+        "hipóteses de problema ainda sem evidência"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/problem-discovery/SKILL.md",
+      "sha256": "7354776379c7c63d9aa920cb3fb5522924dc8fd19d62aa461a4d7f9121cbc615"
+    },
+    {
+      "id": "change-impact-analysis",
+      "kind": "primary",
+      "owner": "scope-analyst",
+      "responsibility": "detectar crescimento de escopo e impacto de mudanças",
+      "tags": [
+        "product",
+        "change-impact",
+        "primary"
+      ],
+      "task_types": [
+        "mudanças que alteram prazo, dependências ou risco"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/change-impact-analysis/SKILL.md",
+      "sha256": "e0fc2acf8209d51e3263db06eaee6dc0fd2487dcdc9a0692ee1c23b8f12c6358"
+    },
+    {
+      "id": "acceptance-criteria-design",
+      "kind": "primary",
+      "owner": "acceptance-engineer",
+      "responsibility": "definir critérios objetivos de aprovação",
+      "tags": [
+        "product",
+        "acceptance-contract",
+        "primary"
+      ],
+      "task_types": [
+        "entregas sem condição observável de sucesso"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/acceptance-criteria-design/SKILL.md",
+      "sha256": "4a1f66065e7390420d24f086ce0218b6b2b75170b11c64ad743174419075a2a2"
+    },
+    {
+      "id": "architecture-governance",
+      "kind": "primary",
+      "owner": "architecture-lead",
+      "responsibility": "consolidar decisões estruturais e contratos técnicos",
+      "tags": [
+        "architecture",
+        "architecture-verdict",
+        "primary"
+      ],
+      "task_types": [
+        "conflitos entre camadas, contratos e requisitos não funcionais"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/architecture-governance/SKILL.md",
+      "sha256": "48aed24dbd51c5c5bb55fc7fe2dd5597d8f3ad1126ef33266209f367823d1d19"
+    },
+    {
+      "id": "system-design",
+      "kind": "primary",
+      "owner": "solution-architect",
+      "responsibility": "projetar componentes, limites e dependências",
+      "tags": [
+        "architecture",
+        "solution-design",
+        "primary"
+      ],
+      "task_types": [
+        "novos módulos e mudanças cross-cutting"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/system-design/SKILL.md",
+      "sha256": "5e56de82655abe5b89952c211eb7f6f793f4bef4dc2479ba4cc289edb1185a31"
+    },
+    {
+      "id": "api-contract-design",
+      "kind": "primary",
+      "owner": "api-contract-designer",
+      "responsibility": "definir interfaces, schemas e erros de integração",
+      "tags": [
+        "architecture",
+        "api-contract",
+        "primary"
+      ],
+      "task_types": [
+        "contratos instáveis ou incompatíveis"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/api-contract-design/SKILL.md",
+      "sha256": "a2b3cd149a8d3cf571cb574ccefcef78e5ac9787e879e5365d3c698324b32dfd"
+    },
+    {
+      "id": "data-modeling",
+      "kind": "primary",
+      "owner": "data-modeler",
+      "responsibility": "modelar persistência, migrações e integridade",
+      "tags": [
+        "architecture",
+        "data-model",
+        "primary"
+      ],
+      "task_types": [
+        "dados sem ownership, chave ou regra de evolução"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/data-modeling/SKILL.md",
+      "sha256": "41135242f1555c87c23e134eff4955001ca3bcbac29a8e77e256327d3fdaf251"
+    },
+    {
+      "id": "threat-modeling",
+      "kind": "primary",
+      "owner": "security-architect",
+      "responsibility": "modelar ameaças e requisitos de segurança",
+      "tags": [
+        "architecture",
+        "threat-model",
+        "primary"
+      ],
+      "task_types": [
+        "superfícies de ataque, trust boundaries e abuso"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/threat-modeling/SKILL.md",
+      "sha256": "6d7a1c7e561cb355b46031136c2ceabc7b1c07fac333de0f96cee74a01dd2a17"
+    },
+    {
+      "id": "backend-coordination",
+      "kind": "primary",
+      "owner": "backend-lead",
+      "responsibility": "coordenar e validar entregas de backend",
+      "tags": [
+        "backend",
+        "backend-plan",
+        "primary"
+      ],
+      "task_types": [
+        "múltiplos especialistas backend ou integração conflitante"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/backend-coordination/SKILL.md",
+      "sha256": "55ee7583576f80ff5bce7e83f88f05a3178e9b3d168eb405337b93d41b78e629"
+    },
+    {
+      "id": "feature-implementation",
+      "kind": "primary",
+      "owner": "feature-engineer",
+      "responsibility": "implementar regras de negócio no backend",
+      "tags": [
+        "backend",
+        "backend-change",
+        "primary"
+      ],
+      "task_types": [
+        "use cases e comportamento de domínio"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/feature-implementation/SKILL.md",
+      "sha256": "1cfca44d6d892120807df355925f33de74bdca1019818a7b8f030d5a2c30b3a2"
+    },
+    {
+      "id": "integration-patterns",
+      "kind": "primary",
+      "owner": "integration-engineer",
+      "responsibility": "integrar APIs, eventos e serviços externos",
+      "tags": [
+        "backend",
+        "integration-adapter",
+        "primary"
+      ],
+      "task_types": [
+        "falhas de fronteira, idempotência e compatibilidade"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/integration-patterns/SKILL.md",
+      "sha256": "72cbf2822f0768aad9a5529605f190effd9c0a4ce91239c2828fd6fa93feb179"
+    },
+    {
+      "id": "profiling-and-optimization",
+      "kind": "primary",
+      "owner": "performance-engineer",
+      "responsibility": "diagnosticar e corrigir gargalos medidos",
+      "tags": [
+        "backend",
+        "performance-evidence",
+        "primary"
+      ],
+      "task_types": [
+        "latência, throughput, memória e I/O comprovados"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/profiling-and-optimization/SKILL.md",
+      "sha256": "fabb9a7bca5c9a644cb43329af06d24beeb456c83d2d1e22a5ec06597e7511d4"
+    },
+    {
+      "id": "safe-refactoring",
+      "kind": "primary",
+      "owner": "refactoring-engineer",
+      "responsibility": "melhorar estrutura preservando comportamento",
+      "tags": [
+        "backend",
+        "refactoring-diff",
+        "primary"
+      ],
+      "task_types": [
+        "dívida estrutural com cobertura suficiente"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/safe-refactoring/SKILL.md",
+      "sha256": "eed020aebeeb189d60c18b605f33933964fa9d8b119bfb2871133f2f399cdce9"
+    },
+    {
+      "id": "frontend-coordination",
+      "kind": "primary",
+      "owner": "frontend-lead",
+      "responsibility": "coordenar implementação visual e integração de UI",
+      "tags": [
+        "frontend",
+        "frontend-plan",
+        "primary"
+      ],
+      "task_types": [
+        "fluxos que cruzam componentes ou especialistas"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/frontend-coordination/SKILL.md",
+      "sha256": "e3f503f4748fc0de25d237bf6e00ae24db621f4a4456d265248e67b945c25509"
+    },
+    {
+      "id": "ui-implementation",
+      "kind": "primary",
+      "owner": "ui-implementer",
+      "responsibility": "implementar telas, componentes e fluxos",
+      "tags": [
+        "frontend",
+        "ui-change",
+        "primary"
+      ],
+      "task_types": [
+        "interfaces aprovadas ainda não materializadas"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/ui-implementation/SKILL.md",
+      "sha256": "74753f094ec32a005e939fe245b7ef4a15b8d2586cd639b819ec918431252257"
+    },
+    {
+      "id": "design-system-management",
+      "kind": "primary",
+      "owner": "design-system-engineer",
+      "responsibility": "manter tokens e componentes reutilizáveis",
+      "tags": [
+        "frontend",
+        "design-system-change",
+        "primary"
+      ],
+      "task_types": [
+        "duplicação e divergência de componentes"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/design-system-management/SKILL.md",
+      "sha256": "09de72cb6e7b6bc5f85e541e0058259c01ee031a7df487d0aa5a3cb7a8680d7d"
+    },
+    {
+      "id": "accessibility-auditing",
+      "kind": "primary",
+      "owner": "accessibility-engineer",
+      "responsibility": "avaliar e corrigir barreiras de acessibilidade",
+      "tags": [
+        "frontend",
+        "accessibility-report",
+        "primary"
+      ],
+      "task_types": [
+        "navegação, contraste, semântica e feedback inacessíveis"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/accessibility-auditing/SKILL.md",
+      "sha256": "03ab03fb9cf0e12abc0ec89e46407f2691eed1dc3e2ec44d52c453fbb0061860"
+    },
+    {
+      "id": "visual-regression-analysis",
+      "kind": "primary",
+      "owner": "visual-consistency-engineer",
+      "responsibility": "detectar regressões e inconsistências visuais",
+      "tags": [
+        "frontend",
+        "visual-diff-report",
+        "primary"
+      ],
+      "task_types": [
+        "diferenças não intencionais entre estados e telas"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/visual-regression-analysis/SKILL.md",
+      "sha256": "d0e55655c50e6f7bbad098a563aee647cb58b699bba92022d3158fb4339cd926"
+    },
+    {
+      "id": "quality-gate-management",
+      "kind": "primary",
+      "owner": "quality-lead",
+      "responsibility": "decidir passagem pelo gate de qualidade",
+      "tags": [
+        "quality",
+        "quality-verdict",
+        "primary"
+      ],
+      "task_types": [
+        "conflitos entre evidência, risco e critérios"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/quality-gate-management/SKILL.md",
+      "sha256": "7226a2339e62acf9e86d614be163c6f1f6487740c874fb9637bfba086c769e93"
+    },
+    {
+      "id": "test-strategy",
+      "kind": "primary",
+      "owner": "test-strategist",
+      "responsibility": "definir cobertura proporcional ao risco",
+      "tags": [
+        "quality",
+        "test-strategy",
+        "primary"
+      ],
+      "task_types": [
+        "lacunas entre risco, critérios e níveis de teste"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/test-strategy/SKILL.md",
+      "sha256": "38eb79bdb38256d4eda46ac9b1081fd241e1fb9fa59a1934bbf657925efaf659"
+    },
+    {
+      "id": "automated-testing",
+      "kind": "primary",
+      "owner": "automated-test-engineer",
+      "responsibility": "implementar e manter testes automatizados",
+      "tags": [
+        "quality",
+        "test-change",
+        "primary"
+      ],
+      "task_types": [
+        "comportamento verificável sem cobertura repetível"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/automated-testing/SKILL.md",
+      "sha256": "f04b98ef66da9eb80a3ee4b026cf9ca8a5fe1076aa679620eb1146cbf0dd1be7"
+    },
+    {
+      "id": "root-cause-analysis",
+      "kind": "primary",
+      "owner": "defect-investigator",
+      "responsibility": "identificar causa real de falhas",
+      "tags": [
+        "quality",
+        "root-cause-report",
+        "primary"
+      ],
+      "task_types": [
+        "erros reproduzíveis, intermitentes ou regressões"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/root-cause-analysis/SKILL.md",
+      "sha256": "16693e09d2eb1e02eee69627aa732ee6b0dd9fade2b8b42d177f4244a2e74088"
+    },
+    {
+      "id": "evidence-based-code-review",
+      "kind": "primary",
+      "owner": "code-review-specialist",
+      "responsibility": "revisar código com achados comprováveis",
+      "tags": [
+        "quality",
+        "review-report",
+        "primary"
+      ],
+      "task_types": [
+        "bugs, riscos e lacunas em diffs"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/evidence-based-code-review/SKILL.md",
+      "sha256": "1921d122c9f1178b410da3d5f4b881788675be04a810249decab1e7ba3314bb5"
+    },
+    {
+      "id": "deployment-readiness",
+      "kind": "primary",
+      "owner": "operations-lead",
+      "responsibility": "decidir prontidão operacional",
+      "tags": [
+        "operations",
+        "readiness-verdict",
+        "primary"
+      ],
+      "task_types": [
+        "conflitos de release, observabilidade e rollback"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/deployment-readiness/SKILL.md",
+      "sha256": "acf3cab25a8ceb2eb8096ddc5e5f6f92321ff368ddbf69ce555da81511eea0f9"
+    },
+    {
+      "id": "infrastructure-as-code",
+      "kind": "primary",
+      "owner": "infrastructure-engineer",
+      "responsibility": "configurar ambiente e infraestrutura como código",
+      "tags": [
+        "operations",
+        "infrastructure-change",
+        "primary"
+      ],
+      "task_types": [
+        "drift, isolamento e recursos de execução"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/infrastructure-as-code/SKILL.md",
+      "sha256": "922e117de17752b8619b23ab42b471476bc49f5f40dd096acc5cf6e2e8441147"
+    },
+    {
+      "id": "ci-cd-engineering",
+      "kind": "primary",
+      "owner": "pipeline-engineer",
+      "responsibility": "construir e reparar CI/CD",
+      "tags": [
+        "operations",
+        "pipeline-change",
+        "primary"
+      ],
+      "task_types": [
+        "builds não reprodutíveis e gates quebrados"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/ci-cd-engineering/SKILL.md",
+      "sha256": "e1bce77d3f481ac89cd8d7ab1ed32e9652d29a7111e25ae9255d46f201356fee"
+    },
+    {
+      "id": "release-management",
+      "kind": "primary",
+      "owner": "release-manager",
+      "responsibility": "preparar versão, migração e rollback",
+      "tags": [
+        "operations",
+        "release-plan",
+        "primary"
+      ],
+      "task_types": [
+        "coordenação de artefatos e janela de entrega"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/release-management/SKILL.md",
+      "sha256": "436d4a606bcd76b2821be263bcd3f58bc9285830566f7534c54763f7febb0288"
+    },
+    {
+      "id": "telemetry-instrumentation",
+      "kind": "primary",
+      "owner": "telemetry-engineer",
+      "responsibility": "instrumentar logs, métricas e traces",
+      "tags": [
+        "operations",
+        "telemetry-change",
+        "primary"
+      ],
+      "task_types": [
+        "execução opaca ou dados sem proveniência"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/telemetry-instrumentation/SKILL.md",
+      "sha256": "9f7e4e09a266b19e17d7c11398918debc3f32bc83a201e7861878ba65ce210e0"
+    },
+    {
+      "id": "knowledge-governance",
+      "kind": "primary",
+      "owner": "knowledge-lead",
+      "responsibility": "governar consistência da base de conhecimento",
+      "tags": [
+        "knowledge",
+        "knowledge-verdict",
+        "primary"
+      ],
+      "task_types": [
+        "conhecimento duplicado, contraditório ou obsoleto"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/knowledge-governance/SKILL.md",
+      "sha256": "832f251dd7e4acb23c5c7f085b099c0ca9e508bf5dbc03c09e3cf6b9c1e994f8"
+    },
+    {
+      "id": "repository-mapping",
+      "kind": "primary",
+      "owner": "repository-cartographer",
+      "responsibility": "mapear repositórios e dependências em modo read-only",
+      "tags": [
+        "knowledge",
+        "repository-map",
+        "primary"
+      ],
+      "task_types": [
+        "código desconhecido sem índice confiável"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/repository-mapping/SKILL.md",
+      "sha256": "4e8a2854ca86280916655ec513a99818363254de5d76171b6ce6ab3e2bd27a16"
+    },
+    {
+      "id": "technical-source-research",
+      "kind": "primary",
+      "owner": "evidence-researcher",
+      "responsibility": "recuperar e avaliar fontes técnicas primárias",
+      "tags": [
+        "knowledge",
+        "research-dossier",
+        "primary"
+      ],
+      "task_types": [
+        "decisão que depende de capacidade externa mutável"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/technical-source-research/SKILL.md",
+      "sha256": "fe2e97a597c29b1ad41593dfd6d363fc0463ac221d1edb6be3018d7ddbb1bd15"
+    },
+    {
+      "id": "memory-curation",
+      "kind": "primary",
+      "owner": "memory-librarian",
+      "responsibility": "consolidar, relacionar e expirar memórias",
+      "tags": [
+        "knowledge",
+        "memory-proposal",
+        "primary"
+      ],
+      "task_types": [
+        "memória proposta, duplicada ou contraditória"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/memory-curation/SKILL.md",
+      "sha256": "41e7b64a544fad6003200f1372cd2f9c370140cab86fe4d2f810c9149b7992a9"
+    },
+    {
+      "id": "technical-documentation",
+      "kind": "primary",
+      "owner": "technical-writer",
+      "responsibility": "produzir documentação técnica precisa",
+      "tags": [
+        "knowledge",
+        "technical-document",
+        "primary"
+      ],
+      "task_types": [
+        "conhecimento validado ainda não comunicável"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/technical-documentation/SKILL.md",
+      "sha256": "c40a896b4970035e2ab0d97a1f2b78f09238f8ab20f676e5c27aac8e2ce07012"
+    },
+    {
+      "id": "workflow-routing",
+      "kind": "primary",
+      "owner": "central-orchestrator",
+      "responsibility": "classificar trabalho e selecionar o menor conjunto suficiente",
+      "tags": [
+        "central",
+        "execution-plan",
+        "primary"
+      ],
+      "task_types": [
+        "tarefas que exigem roteamento, orçamento e coordenação"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/workflow-routing/SKILL.md",
+      "sha256": "7339405cc90aa1399d32167a1c79cbd9c0806c608196ca6e2dd5104210c21e49"
+    }
+  ],
+  "shared": [
+    {
+      "id": "git-diff-analysis",
+      "kind": "shared",
+      "summary": "Analisar somente mudanças relevantes e vincular cada achado a um trecho do diff.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/git-diff-analysis/SKILL.md",
+      "sha256": "535fce1741ac8bd0a467a2660bf38cc7db71fb09477fd13b8e13c87f870f5cc3"
+    },
+    {
+      "id": "structured-handoff",
+      "kind": "shared",
+      "summary": "Transferir objetivo, contexto mínimo, artefatos e evidências pelo contrato Handoff v1.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/structured-handoff/SKILL.md",
+      "sha256": "1587e8d0f9508771f5a3b7a8210fdbd388588882df2b41186802375d85b8e805"
+    },
+    {
+      "id": "technical-evidence",
+      "kind": "shared",
+      "summary": "Classificar alegações como observadas, calculadas, estimadas ou desconhecidas.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/technical-evidence/SKILL.md",
+      "sha256": "b7e30070dff73bb28030a0958eae21c53a8d3c9c6f5e82777a453979900ffb87"
+    },
+    {
+      "id": "token-budgeting",
+      "kind": "shared",
+      "summary": "Aplicar limites de chamadas, agentes, tentativas e contexto sem reduzir segurança.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/token-budgeting/SKILL.md",
+      "sha256": "55a4e3523f5522ec9d0f1316b93eb6259a9911c6096be4d4b170f4374c5fdb10"
+    },
+    {
+      "id": "test-result-validation",
+      "kind": "shared",
+      "summary": "Validar comando, ambiente, saída e exit code antes de aceitar um teste.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/test-result-validation/SKILL.md",
+      "sha256": "94be281f1cb3bd6b102810bae403e8a22b64a7c93e5db3211e41aea29b9c8c2b"
+    },
+    {
+      "id": "risk-classification",
+      "kind": "shared",
+      "summary": "Classificar risco por impacto, reversibilidade, dados, segurança e incerteza.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/risk-classification/SKILL.md",
+      "sha256": "1e40f1ea295f3bb34fc845990e25c190a07a6cad91c833be2650310026e399e6"
+    },
+    {
+      "id": "incident-triage",
+      "kind": "shared",
+      "summary": "Priorizar incidente, preservar evidência e separar mitigação de causa raiz.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/incident-triage/SKILL.md",
+      "sha256": "b73f8a6e0b3355f089428666ab3efa7fe852ba9c7d0ec562db5336fca585abc4"
+    },
+    {
+      "id": "dependency-analysis",
+      "kind": "shared",
+      "summary": "Mapear dependências diretas, transitivas e contratos afetados.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/dependency-analysis/SKILL.md",
+      "sha256": "d2dec9127df542bf50b0d316c901c02b7ae193aef7b2c5fd4633960c9de78237"
+    },
+    {
+      "id": "task-decomposition",
+      "kind": "shared",
+      "summary": "Quebrar objetivo em unidades verificáveis com dependências e ownership.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/task-decomposition/SKILL.md",
+      "sha256": "ad5baada93c8c9a1bba4faa8123ecf067aff938eddba5807eff0421c15ba6e72"
+    },
+    {
+      "id": "context-compression",
+      "kind": "shared",
+      "summary": "Comprimir contexto em decisões, evidências e referências sem repassar histórico.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/context-compression/SKILL.md",
+      "sha256": "40716c53aa9fa7268d32093f6681879fd0a6354dc295df2c8253d1c2818c7bb0"
+    },
+    {
+      "id": "artifact-contracts",
+      "kind": "shared",
+      "summary": "Validar artefatos estruturados contra schema, versão e ownership.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/artifact-contracts/SKILL.md",
+      "sha256": "054b5aebedc06730b5814e586b608ebdbcb99e1f8dc2a0ad8003a3bf09b1dea6"
+    },
+    {
+      "id": "safe-tool-execution",
+      "kind": "shared",
+      "summary": "Executar ferramentas com alvo explícito, menor privilégio e confirmação quando destrutivo.",
+      "tags": [
+        "shared",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/safe-tool-execution/SKILL.md",
+      "sha256": "f36ef58c81d5da21220064000d8b2ab9bbfd5f00ffb28fbc913644824d4b9bf4"
+    }
+  ],
+  "commands": [
+    {
+      "id": "clareza",
+      "kind": "command",
+      "owner": "code-review-specialist",
+      "summary": "Revisar tarefa, diff, código ou arquitetura com evidência proporcional ao risco.",
+      "argument_hint": "[quick|normal|high] [target] [--task-id ID] [--security] [--architecture] [--timeout SECONDS] [--json]",
+      "cli": "orchestra clareza [QUICK|NORMAL|HIGH] [target] [--task-id ID] [--security] [--architecture] [--timeout SECONDS] [--json]",
+      "cli_example_argv": [
+        "clareza",
+        "HIGH",
+        ".",
+        "--task-id",
+        "task-demo",
+        "--security",
+        "--architecture",
+        "--timeout",
+        "30",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/clareza/SKILL.md",
+      "sha256": "cc95c018b93415d0c3b35c79b8a8d040ac19cbafee1af0ac943e89cfc456d2a3"
+    },
+    {
+      "id": "organizar",
+      "kind": "command",
+      "owner": "central-orchestrator",
+      "summary": "Criar uma solicitação persistente para processamento pela esteira.",
+      "argument_hint": "<title> --objective <text> [--owner ID] [--criteria TEXT ...] [--profile PROFILE] [--json]",
+      "cli": "orchestra task create <title> --objective <text> [--owner ID] [--criteria TEXT ...] [--profile PROFILE] [--json]",
+      "cli_example_argv": [
+        "task",
+        "create",
+        "Demo",
+        "--objective",
+        "Validar contrato",
+        "--criteria",
+        "Teste passa",
+        "--profile",
+        "BALANCED",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/organizar/SKILL.md",
+      "sha256": "a022ca69119aee9fa9ef89597ce34ccf5fb20853ebf168eb3af0db8b0a13adaf"
+    },
+    {
+      "id": "planejar",
+      "kind": "command",
+      "owner": "product-lead",
+      "summary": "Persistir a conclusão do planejamento e seus critérios/evidências na task.",
+      "argument_hint": "<task-id> [--actor ID] [--reason-code CODE] [--reason TEXT] [--evidence REF ...] [--json]",
+      "cli": "orchestra task transition <task-id> PLANNED [--actor ID] [--reason-code CODE] [--reason TEXT] [--evidence REF ...] [--json]",
+      "cli_example_argv": [
+        "task",
+        "transition",
+        "task-demo",
+        "PLANNED",
+        "--actor",
+        "product-lead",
+        "--reason-code",
+        "PLAN_APPROVED",
+        "--evidence",
+        "artifact:plan",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/planejar/SKILL.md",
+      "sha256": "bd372c9d3c60550318ff9511b2cfe8022acbbbdebd8e73860a4fa977d9a1db3a"
+    },
+    {
+      "id": "construir",
+      "kind": "command",
+      "owner": "backend-lead",
+      "summary": "Iniciar implementação de task aprovada e READY.",
+      "argument_hint": "<task-id> [--actor ID] [--reason-code CODE] [--reason TEXT] [--evidence REF ...] [--json]",
+      "cli": "orchestra task transition <task-id> RUNNING [--actor ID] [--reason-code CODE] [--reason TEXT] [--evidence REF ...] [--json]",
+      "cli_example_argv": [
+        "task",
+        "transition",
+        "task-demo",
+        "RUNNING",
+        "--actor",
+        "backend-lead",
+        "--reason-code",
+        "IMPLEMENTATION_STARTED",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/construir/SKILL.md",
+      "sha256": "1c9d4dc0ad226cff1cb76a586456cae52ca99321be277246129722d8a9714071"
+    },
+    {
+      "id": "validar",
+      "kind": "command",
+      "owner": "quality-lead",
+      "summary": "Executar validações determinísticas e consolidar evidências.",
+      "argument_hint": "[QUICK|NORMAL|HIGH] [target] --task-id ID [--security] [--architecture] [--timeout SECONDS] [--json]",
+      "cli": "orchestra clareza [QUICK|NORMAL|HIGH] [target] --task-id <task-id> [--security] [--architecture] [--timeout SECONDS] [--json]",
+      "cli_example_argv": [
+        "clareza",
+        "NORMAL",
+        ".",
+        "--task-id",
+        "task-demo",
+        "--timeout",
+        "30",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/validar/SKILL.md",
+      "sha256": "c6980df64aa8a2b86e4db3c3b79b3147fa61a9c0f7408141cffdce4302434049"
+    },
+    {
+      "id": "diagnostico",
+      "kind": "command",
+      "owner": "defect-investigator",
+      "summary": "Investigar falha usando a timeline de eventos e evidências.",
+      "argument_hint": "--task-id ID [--file PATH] [--limit N] [--json]",
+      "cli": "orchestra audit --task-id <task-id> [--file PATH] [--limit N] [--json]",
+      "cli_example_argv": [
+        "audit",
+        "--task-id",
+        "task-demo",
+        "--limit",
+        "50",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/diagnostico/SKILL.md",
+      "sha256": "4672fb25b14c42ebcdf27830ce923c18d885fa27405fbe272fdd43d92d5210e5"
+    },
+    {
+      "id": "revisar-arquitetura",
+      "kind": "command",
+      "owner": "architecture-lead",
+      "summary": "Verificar boundaries, contratos e decisões arquiteturais aplicáveis.",
+      "argument_hint": "[target] [--task-id ID] [--security] [--timeout SECONDS] [--json]",
+      "cli": "orchestra clareza HIGH [target] [--task-id ID] --architecture [--security] [--timeout SECONDS] [--json]",
+      "cli_example_argv": [
+        "clareza",
+        "HIGH",
+        ".",
+        "--task-id",
+        "task-demo",
+        "--architecture",
+        "--timeout",
+        "30",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/revisar-arquitetura/SKILL.md",
+      "sha256": "ac454b1f56139a3dad75028de27c762d9fb1d9a88d186824b0d326e75a71284b"
+    },
+    {
+      "id": "pesquisar",
+      "kind": "command",
+      "owner": "evidence-researcher",
+      "summary": "Acionar investigação técnica em fontes primárias por meio do especialista correto.",
+      "argument_hint": "<question> [--json]",
+      "cli": "orchestra route --capability technical-source-research --external-dependencies 1 --validations 1 [--json]",
+      "cli_example_argv": [
+        "route",
+        "--capability",
+        "technical-source-research",
+        "--external-dependencies",
+        "1",
+        "--validations",
+        "1",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/pesquisar/SKILL.md",
+      "sha256": "ce8fe67b8fd5772c2927aceccc25efc1ef940895ecbe70383e99682e8ce6baab"
+    },
+    {
+      "id": "memoria",
+      "kind": "command",
+      "owner": "memory-librarian",
+      "summary": "Consultar, propor ou revisar estado de memória auditável.",
+      "argument_hint": "<search|propose|status> <args> [--json]",
+      "cli": "orchestra memory <search|propose|status> <args> [--json]",
+      "cli_example_argv": [
+        "memory",
+        "search",
+        "decisao",
+        "--scope",
+        "project:demo",
+        "--verified-only",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/memoria/SKILL.md",
+      "sha256": "809d8abf2e8521b879a2bdfc9bede5d08dd41c7645213fffec3ffdd412f9d9ca"
+    },
+    {
+      "id": "agentes",
+      "kind": "command",
+      "owner": "knowledge-lead",
+      "summary": "Consultar catálogo de agentes e disponibilidade.",
+      "argument_hint": "[--department ID] [--skill ID] [--json]",
+      "cli": "orchestra agents [--department ID] [--skill ID] [--json]",
+      "cli_example_argv": [
+        "agents",
+        "--department",
+        "quality",
+        "--skill",
+        "code-review",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/agentes/SKILL.md",
+      "sha256": "1bfc62b2e4651ddab03531777c66a50d1a2aa2c1bec8cebe2e7e9310ba3da43c"
+    },
+    {
+      "id": "departamentos",
+      "kind": "command",
+      "owner": "central-orchestrator",
+      "summary": "Consultar departamentos, líderes e competências.",
+      "argument_hint": "[--json]",
+      "cli": "orchestra departments [--json]",
+      "cli_example_argv": [
+        "departments",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/departamentos/SKILL.md",
+      "sha256": "1e51e23836b6cc5a536f12f2a4781953892a54e032df9720e51fb4ddd8e45ecf"
+    },
+    {
+      "id": "skills",
+      "kind": "command",
+      "owner": "knowledge-lead",
+      "summary": "Consultar catálogo de skills por texto indexado.",
+      "argument_hint": "[--query TERM] [--json]",
+      "cli": "orchestra skills [--query TERM] [--json]",
+      "cli_example_argv": [
+        "skills",
+        "--query",
+        "review",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/skills/SKILL.md",
+      "sha256": "78c42c9f9796435efa4c6a850bbb5a2dee6aeb2dc8af506fa8f93b9bf7592af6"
+    },
+    {
+      "id": "orcamento",
+      "kind": "command",
+      "owner": "central-orchestrator",
+      "summary": "Consultar profiles ou verificar consumo contra um profile.",
+      "argument_hint": "<list|check> [PROFILE] [usage-options] [--json]",
+      "cli": "orchestra budget <list|check> [PROFILE] [usage-options] [--json]",
+      "cli_example_argv": [
+        "budget",
+        "check",
+        "BALANCED",
+        "--agent-runs",
+        "2",
+        "--parallel-agents",
+        "1",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/orcamento/SKILL.md",
+      "sha256": "dbce69a648240290eda65772b2f2679c1b80f1a9df9ddf9a5631b5da15e64b26"
+    },
+    {
+      "id": "esteira",
+      "kind": "command",
+      "owner": "central-orchestrator",
+      "summary": "Visualizar etapas realmente usadas e seus estados.",
+      "argument_hint": "<task-id> [--json]",
+      "cli": "orchestra pipeline <task-id> [--json]",
+      "cli_example_argv": [
+        "pipeline",
+        "task-demo",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/esteira/SKILL.md",
+      "sha256": "39bd183934668b7e73bda03d2d1f3daa07810314f21d1b865e85c63039540c76"
+    },
+    {
+      "id": "retomar",
+      "kind": "command",
+      "owner": "central-orchestrator",
+      "summary": "Retomar uma task interrompida a partir do estado recuperável.",
+      "argument_hint": "<task-id> [--actor ID] [--reason TEXT] [--json]",
+      "cli": "orchestra task resume <task-id> [--actor ID] [--reason TEXT] [--json]",
+      "cli_example_argv": [
+        "task",
+        "resume",
+        "task-demo",
+        "--actor",
+        "central-orchestrator",
+        "--reason",
+        "checkpoint disponivel",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/retomar/SKILL.md",
+      "sha256": "47d6d6d4ca1ce192dfdb29d22cbb333c3ba1d448df9c5ef3422591ec53079600"
+    },
+    {
+      "id": "relatorio",
+      "kind": "command",
+      "owner": "technical-writer",
+      "summary": "Gerar relatório técnico de uma task em arquivo local.",
+      "argument_hint": "<task-id> --output PATH [--json]",
+      "cli": "orchestra report <task-id> --output PATH [--json]",
+      "cli_example_argv": [
+        "report",
+        "task-demo",
+        "--output",
+        "reports/task-demo.md",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/relatorio/SKILL.md",
+      "sha256": "9050c50dfba99b8353534019a526bb0b02dcc33091c47ce4c2a1f4a7ade21371"
+    },
+    {
+      "id": "auditar",
+      "kind": "command",
+      "owner": "quality-lead",
+      "summary": "Examinar decisões, transições, permissões e evidências registradas.",
+      "argument_hint": "[--task-id ID] [--file PATH] [--limit N] [--json]",
+      "cli": "orchestra audit [--task-id ID] [--file PATH] [--limit N] [--json]",
+      "cli_example_argv": [
+        "audit",
+        "--task-id",
+        "task-demo",
+        "--limit",
+        "100",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/auditar/SKILL.md",
+      "sha256": "53fda9551f809e5258bceb94aa8ac160060de08202fd435cc1ef472dcd395dae"
+    },
+    {
+      "id": "doctor-org",
+      "kind": "command",
+      "owner": "operations-lead",
+      "summary": "Diagnosticar instalação, catálogos, schemas, CLI e integrações.",
+      "argument_hint": "[--validate-plugin] [--json]",
+      "cli": "orchestra doctor [--validate-plugin] [--json]",
+      "cli_example_argv": [
+        "doctor",
+        "--validate-plugin",
+        "--json"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/doctor-org/SKILL.md",
+      "sha256": "9c498e4da9f19ac6a4e91baf337d5e50de1a241c0c4dc7e701a3d5f4d212e711"
+    },
+    {
+      "id": "ajuda-org",
+      "kind": "command",
+      "owner": "technical-writer",
+      "summary": "Listar comandos, modos, argumentos e ajuda do parser real.",
+      "argument_hint": "[subcommand]",
+      "cli": "orchestra [subcommand] --help",
+      "cli_example_argv": [
+        "status",
+        "--help"
+      ],
+      "tags": [
+        "command",
+        "workflow"
+      ],
+      "compatibility": "Claude Code >=2.1.322; Windows, Linux, macOS",
+      "ref": "skills/ajuda-org/SKILL.md",
+      "sha256": "b99709d7202db1836131d8297d0b195df3da6b34abf82aa30320702e52b1d28e"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/schemas/metric/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "value", "unit", "provenance", "source", "measured_at"],
+  "properties": {
+    "name": {"type": "string"},
+    "value": {"type": ["number", "null"]},
+    "unit": {"type": "string"},
+    "provenance": {"enum": ["observed", "calculated", "estimated", "unknown"]},
+    "source": {"type": "string"},
+    "measured_at": {"type": "string", "format": "date-time"}
+  },
+  "allOf": [{"if": {"properties": {"provenance": {"const": "unknown"}}}, "then": {"properties": {"value": {"type": "null"}}}}]
+}

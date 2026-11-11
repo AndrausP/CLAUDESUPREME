@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://orchestra.local/schemas/organization-manifest/1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "organization_id", "protocol_version", "package_version", "generated_at", "departments", "agents", "skills", "mcp_servers", "profiles", "policies", "dependencies", "integrations", "checksums"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "organization_id": {"type": "string"},
+    "protocol_version": {"type": "string", "pattern": "^1\\."},
+    "package_version": {"type": "string"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "departments": {"type": "array", "items": {"type": "object"}},
+    "agents": {"type": "array", "items": {"type": "object"}},
+    "skills": {"type": "array", "items": {"type": "object"}},
+    "mcp_servers": {"type": "array", "items": {"type": "object"}},
+    "profiles": {"type": "array", "items": {"enum": ["ECONOMY", "BALANCED", "QUALITY", "CRITICAL"]}, "uniqueItems": true},
+    "policies": {"type": "array", "items": {"type": "object"}},
+    "dependencies": {"type": "array", "items": {"type": "object"}},
+    "integrations": {"type": "object"},
+    "checksums": {"type": "object", "additionalProperties": {"type": "string"}},
+    "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

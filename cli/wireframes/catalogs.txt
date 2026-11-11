@@ -1,0 +1,38 @@
+AGENTES | filtro: departamento=qualidade estado=disponivel
+
+NOME                     COMPETENCIA                         ESTADO
+Quality Lead             Gate de qualidade                  [OK] Disponivel
+Test Strategist          Estrategia de testes               [OK] Disponivel
+Automated Test Engineer  Automacao de testes                [>] Em task ORC-104
+Defect Investigator      Causa raiz                         [OK] Disponivel
+Code Review Specialist   Revisao baseada em evidencia       [OK] Disponivel
+
+DETALHE: Automated Test Engineer
+Departamento: Qualidade e Validacao
+Skills: automated-testing, test-result-validation
+Modelo: sonnet | Esforco: medium | Max turns: 12
+Permissoes: tools Read, Grep, Bash
+Eficiencia: unknown - sem amostra verificada
+
+---
+
+MEMORIA | filtro: estado=PROPOSED tipo=project
+
+[!] mem-142  Politica de retry observada     validacao: pendente
+[!] mem-155  Contrato Ledger v1              validacao: pendente
+
+Nenhum resultado:
+Nenhuma memoria corresponde a `estado:VERIFIED tag:auth`.
+Acao: limpar filtros
+
+---
+
+SKILLS E MCP
+
+[OK] skill  orchestra:clareza    habilitado       checksum verificado
+[!] MCP    context7             autenticacao necessaria
+[X] MCP    claude-peers         falha de conexao
+[-] skill  deploy-external      desabilitado
+
+[Enter] Detalhes  [h] Habilitar/Desabilitar  [/] Filtrar  [Esc] Voltar
+

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "least-privilege",
+  "minimums": {
+    "external_extensions_start_quarantined": true,
+    "external_origins_https_only": true,
+    "execute_during_analysis": false,
+    "persist_prompts": false,
+    "persist_responses": false,
+    "persist_raw_tool_arguments": false,
+    "destructive_action_requires_external_confirmation": true
+  }
+}

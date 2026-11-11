@@ -1,0 +1,24 @@
+ORCHESTRA CORE | projeto: orchestra-core | perfil: BALANCED | PRONTO COM ALERTAS
++--------------------+----------------------------------------------------------+
+| INICIO             | SAUDE                                                    |
+| Esteira            | [!] 2 alertas: 1 MCP falhou; 1 task requer acao         |
+| Departamentos      |                                                          |
+| Agentes            | TAREFA ATIVA                                             |
+| Memoria            | ORC-104  [>] Em execucao                                 |
+| Skills e MCP       | Implementar contrato de eventos                           |
+| Execucao           | Etapa: Implementacao | Owner: Integration Engineer        |
+|                    | Budget: BALANCED (2/4 agentes; 1/2 retries)               |
++--------------------+----------------------------------------------------------+
+| ATIVAS 3 | BLOQUEADAS 1 | ULTIMA OPERACAO: checkpoint gravado 14:32           |
++----------------------------------------------------------------------------- --+
+[Enter] Detalhes  [r] Revisar retomada  [/] Filtrar  [?] Ajuda  [q] Sair
+
+Fallback vazio:
+
+ORCHESTRA CORE
+Estado: Pronto
+Projeto: orchestra-core
+Tarefas ativas: 0
+Organizacao pronta. Nenhuma tarefa ativa.
+Proxima acao: orchestra organize "descricao da tarefa"
+
