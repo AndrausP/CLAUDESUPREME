@@ -117,7 +117,8 @@ Causas:
 ## 5. Achados de qualidade
 
 ### Orchestra Core
-- **[Alto] O guard deixa passar comandos destrutivos:** `rm -fr build`, `rm --recursive --force x`, `del /s /q C:\x`. Falso positivo: `echo format c: is bad`.
+- **[Alto — corrigido após o benchmark] O guard deixava passar comandos destrutivos:** `rm -fr build`, `rm --recursive --force x`, `del /s /q C:\x`. Falso positivo: `echo format c: is bad`. Agora o guard analisa cada segmento do comando, e há 47 casos cobertos em `tests/unit/test_guard_hook.py`.
+- **[Processo — corrigido]** CI adicionada em `.github/workflows/ci.yml`.
 - **[Médio]** A busca de memória faz full scan (`LIKE '%q%'`); trocar por FTS5 ou busca exata por `canonical_key`.
 - **[Médio]** O `telemetry_hook` paga o custo de import mesmo desligado.
 - **[Baixo]** `benchmarks/profile_matrix.py` percorre os `BudgetProfile` mas não os passa para `route()`, então as 4 medições são idênticas.

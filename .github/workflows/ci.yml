@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: Tests (${{ matrix.os }}, Python ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit, catalog, CLI, acceptance and end-to-end tests
+        run: python -m unittest discover -s tests -p "test*.py" -v
+      - name: Install package and smoke-test CLI
+        shell: bash
+        env:
+          NO_COLOR: "1"
+        run: |
+          python -m pip install -e .
+          orchestra --help > /dev/null
+          orchestra route --mutation --areas 2 --validations 2 --json > /dev/null
+          orchestra agents --json > /dev/null
+      - name: Guard hook denies destructive command
+        shell: bash
+        run: |
+          out=$(echo '{"tool_name":"Bash","tool_input":{"command":"rm -fr build"}}' | python scripts/guard_hook.py)
+          echo "$out" | grep -q '"permissionDecision": "deny"'
+          test -z "$(echo '{"tool_name":"Bash","tool_input":{"command":"ls -la"}}' | python scripts/guard_hook.py)"
+
+  build:
+    name: Build wheel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build sdist and wheel
+        run: |
+          python -m pip install build
+          python -m build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  plugin:
+    name: Claude Code plugin
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Validate plugin manifest, skills, agents and hooks
+        run: claude plugin validate .
