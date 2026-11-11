@@ -56,6 +56,7 @@ Use `--json` para automação e `--plain` ou `NO_COLOR=1` em terminais limitados
 ## Testes
 
 ```powershell
+python -m pip install -e ".[dev]"   # jsonschema, usado pelos testes de aceitação
 python -m unittest discover -s tests -p "test*.py"
 claude plugin validate .
 ```
